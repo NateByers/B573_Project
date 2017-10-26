@@ -20,18 +20,18 @@ Motivation
 Problem
 ========================================================
 
+- Precision medicine uses genetic testing to taylor cancer treatment
 - A sequenced tumor could have thousands of mutations
 - Which mutations drive tumor growth and which don't
 
-![driver](http://www.pancreaticcancer.net.au/wp-content/uploads/2016/02/img_genomics-1.jpg)
+![driver](img/driver.png)
 http://www.pancreaticcancer.net.au/research-genomics/ 
 
 Problem
 =========================================================
 
-- How is this currently handled in a precision medicine context?
-- Manual process of searching text in biomedical
-literature to classify mutations
+- How is this currently handled?
+- Clinical pathologist manually reviews and classifies each mutation by searching text in biomedical literature 
 - This is a bottleneck
 - Can it be automated?
 
@@ -65,8 +65,6 @@ Materials
 
 - Manually annotated text for breast and prostate cancers
 from Doughty _et al._ for training the model
-
-- Test set built from PubMed
 
 - tmVar tool used to identify mutations in the text (Wei _et al._)
 

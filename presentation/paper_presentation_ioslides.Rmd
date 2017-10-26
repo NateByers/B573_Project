@@ -1,33 +1,26 @@
-Identifying Tumor Growth Drivers in Biomedical Text
-========================================================
-author: Nathan Byers
-date: October 26, 2017
-autosize: true
+---
+title: "Identifying Tumor Growth Drivers in Biomedical Text"
+author: "Nathan Byers"
+date: "10/26/2017"
+output: beamer_presentation
+---
 
-
-Motivation   
-========================================================
-
-<div class="midcenter" style="margin-left:700px; margin-top:-100px;">
-<img src="img/kaggle.png"></img>
-</div>
+# Motivation   
 
 - Did things backwards: picked my project first, then looked for paper...
 - Personalized medicine Kaggle competition
 - "Classifying Clinically Actionable Genetic Mutations"
 - https://www.kaggle.com/c/msk-redefining-cancer-treatment
 
-Problem
-========================================================
+# Problem
 
 - A sequenced tumor could have thousands of mutations
 - Which mutations drive tumor growth and which don't
 
-![driver](http://www.pancreaticcancer.net.au/wp-content/uploads/2016/02/img_genomics-1.jpg)
+![driver](img/driver.png)
 http://www.pancreaticcancer.net.au/research-genomics/ 
 
-Problem
-=========================================================
+# Problem
 
 - How is this currently handled in a precision medicine context?
 - Manual process of searching text in biomedical
@@ -35,8 +28,7 @@ literature to classify mutations
 - This is a bottleneck
 - Can it be automated?
 
-Kaggle Challenge
-========================================================
+# Kaggle Challenge
 
 - Come up with an algorithm that will automate
 this process
@@ -47,8 +39,7 @@ classified is provided on the Kaggle website
 the mutations in the Kaggle training data and evaluate the performance
 on the test data
 
-Paper
-========================================================
+# Paper
 
 - Singhal A, Simmons M, and Lu Z. "Text mining for precision medicine: automating
 disease-mutation relationship extraction from biomedical literature." _Journal of the
@@ -60,8 +51,7 @@ American Medical Informatics Association_ (2016) 23: 766-772.
  - Focused on breast and prostate cancers
  
  
-Materials
-======================================================
+# Materials
 
 - Manually annotated text for breast and prostate cancers
 from Doughty _et al._ for training the model
@@ -74,18 +64,17 @@ from Doughty _et al._ for training the model
 
 - Weka for prediction
 
-======================================================
+----------------------------------------------------
 
 ![methods1](img/methods1.png)
 
 
-=====================================================
+-------------------------------------------------
 
 ![methods2](img/methods2.PNG)
  
 
-Feature Construction
-=====================================================
+# Feature Construction
 
 - Target disease frequency score (TDFS)
  - "This score is computed as the frequency count for the target disease mentioned 
@@ -97,8 +86,7 @@ Feature Construction
  closest disease mentioned in the text."
 
  
-Feature Creation
-====================================================
+# Feature Creation
 
 - Other disease frequency score (ODFS)
  - "Unlike the TDFS, which captures information about the target disease in the 
@@ -109,8 +97,7 @@ Feature Creation
  is a binary score denoting the co-occurrence of the mutation and its nearest 
  disease in the same sentence."
  
-Feature Creation
-========================================================
+# Feature Creation
 
 - Within text sentiment score
  - "For a mutation name in the text and its corresponding nearest disease mentioned
@@ -122,14 +109,12 @@ Feature Creation
  the previous feature. It provides an estimate of the reliability of the sentiment
  score."
 
-ML Algorithm
-=====================================================
+# ML Algorithm
 
 - Tested decision tree, multilayer perceptron, and Bayesian logistic regression
 - Only reported decision tree results because of its superior performance
 
-Results: Prostate Cancer
-=====================================================
+# Results: Prostate Cancer
 
 
 |        	|EMU*	  |tmVar+ML|
@@ -141,8 +126,7 @@ Results: Prostate Cancer
 * Current state of the art mutation extraction for given disease 
 (Doughty _et al._)
 
-Results: Breast Cancer
-==================================================
+# Results: Breast Cancer
 
 |         | EMU	 |tmVar+ML|
 |---------|------|--------|
@@ -151,8 +135,8 @@ Results: Breast Cancer
 |F-measure|0.828 |0.845   |
 
 
-My Project
-==================================================
+# My Project
+
 
 - Identify diseases (DNorm) and mutations (tmVar) in the Kaggle training text using
 the National Center for Biotechnology Information API
@@ -163,8 +147,8 @@ the National Center for Biotechnology Information API
  - Distance from other mutations
  - Sentiment of text
 
-My Project
-====================================================
+# My Project
+
 - Apply several machine learning algorithms
  - Decision Tree
  - Neural Network
@@ -172,8 +156,7 @@ My Project
 - Score on the test text and see which is most accurate
 
 
-References
-=====================================================
+# References
 
 
 - <font size="5">Doughty E, Kertesz-Farkas A, Bodenreider O, et al. "Toward an automatic method for extracting cancer- and other disease-related point mutations from the biomedical literature." _Bioinformatics_. 2011 27(3):408–415</font>
